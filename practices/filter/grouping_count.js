@@ -2,19 +2,28 @@
 
 function grouping_count(collection) {
   var group={};
-  var n=0;
+  var keys=[];
   var check;
-  group.collection[0]=1;
+  debugger;
+  var a=collection[0].toString()
+  group[a]=1;
   for(var i=1;i<collection.length;i++){
     check=0;
-    for(var j=1;j<n+2;j++){
-      if(collection[i]==group){
-        check=1;
-
+    for(var key in group){
+      keys.push(key);
+      for(var j=0;j<keys.length;j++){
+        if(collection[i]==keys[j]){
+          group.keys[j]++;
+          check=1;
+        }
+      }
+      if(check==0){
+        a=collection[i].toString()
+        group.[a]=1;
       }
     }
   }
-
+  return group;
   //在这里写入代码
 }
 
